@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Agregar servicios al contenedor.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<EmpleadosDatos>(); // Asegúrate de registrar tu clase de acceso a datos
+builder.Services.AddScoped<TipoCambioDatos>(); // Asegúrate de registrar tu clase de acceso a datos
 
 var app = builder.Build();
 

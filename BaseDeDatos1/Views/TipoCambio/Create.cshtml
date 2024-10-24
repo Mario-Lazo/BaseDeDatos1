@@ -1,0 +1,39 @@
+﻿@model BaseDeDatos1.Models.TipoCambioModel
+
+@{
+    ViewBag.Title = "Crear Tipo de cambio";
+}
+
+<h2>Agregar nuevo tipo de cambio</h2>
+
+<form asp-action="Create" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label">Moneda Origen</label>
+        <input asp-for="MonedaOrigen" class="form-control" />
+        <span asp-validation-for="MonedaOrigen" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Moneda Destino</label>
+        <input asp-for="MonedaDestino" class="form-control" />
+        <span asp-validation-for="MonedaDestino" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Fecha</label>
+        <input asp-for="Fecha" type="date" class="form-control" />
+        <span asp-validation-for="Fecha" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Tipo de cambio (Compra)</label>
+        <input asp-for="TipoDeCambioCompra" class="form-control" />
+        <span asp-validation-for="TipoDeCambioCompra" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Tipo de cambio (Venta)</label>
+        <input asp-for="TipoDeCambioVenta" class="form-control" />
+        <span asp-validation-for="TipoDeCambioVenta" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>

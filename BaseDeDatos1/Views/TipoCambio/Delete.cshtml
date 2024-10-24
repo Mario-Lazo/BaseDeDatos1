@@ -1,0 +1,39 @@
+﻿@model BaseDeDatos1.Models.TipoCambioModel
+
+@{
+    ViewBag.Title = "Eliminar tipo de cambio";
+}
+
+<h2>Eliminar tipo de cambio</h2>
+
+<h3>¿Está seguro de que desea eliminar la información?</h3>
+
+<div>
+    <h4>@Model.MonedaOrigen - @Model.MonedaDestino</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">ID</dt>
+        <dd class="col-sm-10">@Model.Id</dd>
+
+        <dt class="col-sm-2">Moneda Origen</dt>
+        <dd class="col-sm-10">@Model.MonedaOrigen</dd>
+
+        <dt class="col-sm-2">Moneda Destino</dt>
+        <dd class="col-sm-10">@Model.MonedaDestino</dd>
+
+        <dt class="col-sm-2">Fecha</dt>
+        <dd class="col-sm-10">@Model.Fecha?.ToString("dd/MM/yyyy")</dd>
+
+        <dt class="col-sm-2">Tipo de cambio (Compra)</dt>
+        <dd class="col-sm-10">@Model.TipoDeCambioCompra</dd>
+
+        <dt class="col-sm-2">Tipo de cambio (Venta)</dt>
+        <dd class="col-sm-10">@Model.TipoDeCambioVenta</dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
