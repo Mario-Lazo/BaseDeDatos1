@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BaseDeDatos1.Models.EmpleadosModel>
+
+@{
+    ViewData["Title"] = "Lista de tipos de cambio";
+}
+
+<h1>Tipo de cambio</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Moneda origen</th>
+            <th>Moneda destino</th>
+            <th>Tasa de cambio</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var empleado in Model)
+        {
+            <tr>
+                <td>@empleado.EmpleadoID</td>
+                <td>@empleado.Nombre</td>
+                <td>@empleado.Edad</td>
+                <td>@empleado.Departamento</td>
+                <td>@empleado.FechaContratacion?.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@empleado.EmpleadoID">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@empleado.EmpleadoID">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Crear Nuevo Tipo de cambio</a>
